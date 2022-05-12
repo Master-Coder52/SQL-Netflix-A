@@ -1,5 +1,5 @@
-Drop TABLE IF EXISTS Countries 
-DROP TABLE IF EXISTS Country
+Drop TABLE IF EXISTS Countries;
+DROP TABLE IF EXISTS Country;
 drop table if exists Netflix_Dataset;
  
 CREATE TABLE Netflix_Dataset(
