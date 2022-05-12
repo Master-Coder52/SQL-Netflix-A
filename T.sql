@@ -16,7 +16,10 @@ rop table if exists Netflix_Dataset;
  
  copy Netflix_Dataset from [PATH ] delimiter ',' csv header;
 
-Select Split_part(Country, ',', 1) INTO TABLE Countries from Netflix_Dataset 
+CREATE TABLE Netflix_Dataset_2 AS TABLE Netflix_Dataset;
 
+UPDATE Netflix_Dataset_2 SET showid = UPPER(showid), category = UPPER(category), title = UPPER(title), director = UPPER(director), casts = UPPER(casts), country = UPPER(country), release_date = UPPER(release_date), rating = UPPER(rating), duration = UPPER(duration), "type" = UPPER("type"), description = UPPER(description);
+
+Select Split_part(Country, ',', 1) INTO TABLE Countries from Netflix_Dataset 
 
 Select Split_part(Director, ',', 1) INTO TABLE Director from netflix_dataset
